@@ -21,12 +21,6 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.8.4
-
-    - name: Terraform Fmt
-      run: terraform fmt -check
-
-    - name: Terraform Validate
-      run: terraform validate
     
     - name: Check variables.tf
       run: |
@@ -51,3 +45,20 @@ jobs:
           exit 1
         fi
         echo "outputs.tf is present."
+    
+    - name: Terraform Fmt
+      run: terraform fmt -check
+    
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Validate
+      run: terraform validate
+    
+    - name: Check tfplan
+      run: |
+        if [ ! -f tfplan ]; then
+          echo "tfplan file not found!"
+          exit 1
+        fi
+        echo "tfplan file is present."
