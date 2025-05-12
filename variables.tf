@@ -1,24 +1,24 @@
 variable "azurerm_resource_group" {
-  type = string
+  type    = string
   default = "example-resources"
 }
 
 variable "azlocation" {
-  type = string
+  type    = string
   default = "West Europe"
 }
 
 variable "azurerm_storage_account" {
-  type = string
+  type    = string
   default = "examplestorakonstantinou"
 }
 
 variable "azurerm_storage_container" {
-  type = string
+  type    = string
   default = "konstantinouexample"
 }
 
 variable "azurerm_storage_blob" {
-  type = string
+  type    = string
   default = "terraform_code.zip"
 }

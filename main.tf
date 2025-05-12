@@ -31,9 +31,9 @@ resource "azurerm_storage_account" "example" {
 }
 
 resource "azurerm_storage_container" "example" {
-  name                   = var.azurerm_storage_container
-  storage_account_name   = azurerm_storage_account.example.name
-  container_access_type  = "private"
+  name                  = var.azurerm_storage_container
+  storage_account_name  = azurerm_storage_account.example.name
+  container_access_type = "private"
 }
 
 resource "azurerm_storage_blob" "example" {
